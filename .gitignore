@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Neovim binaries and libraries
+bin/*
+!bin/.gitkeep
+
+lib/*
+!lib/.gitkeep
+
+share/*
+!share/.gitkeep
+
+# Neovim runtime data
+cache/*
+!cache/.gitkeep
+
+config/*
+!config/.gitkeep
+
+data/*
+!data/.gitkeep
+
+state/*
+!state/.gitkeep

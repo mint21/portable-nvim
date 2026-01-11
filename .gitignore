@@ -17,6 +17,7 @@ cache/*
 
 config/*
 !config/.gitkeep
+!config/nvim/
 
 data/*
 !data/.gitkeep

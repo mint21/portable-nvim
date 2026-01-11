@@ -1,5 +1,7 @@
 # portable-nvim
 
+[neovim releases](https://github.com/neovim/neovim/releases)
+
 If on macOS: ``xattr -cr ~/portable-nvim``
 
 ```bash

@@ -6,8 +6,12 @@ return {
       root_markers = { "Cargo.toml" },
       settings = {
         ["rust-analyzer"] = {
-          cargo = { allFeatures = true },
-          checkOnSave = { command = "clippy" },
+          cargo = { 
+            allFeatures = true,
+          },
+          check = {
+            command = "clippy",
+          },
         },
       },
     }

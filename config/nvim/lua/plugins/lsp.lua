@@ -27,7 +27,7 @@ return {
             end,
         })
 
-        -- Add to your terraform autocmd
+        -- Auto-format Terraform on save
         vim.api.nvim_create_autocmd("BufWritePre", {
             pattern = { "*.tf", "*.hcl" },
             callback = function()
@@ -35,14 +35,15 @@ return {
             end,
         })
 
-        -- Diagnostic
+        -- Diagnostic keymaps
         vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float)
-        vim.keymap.set("n", "<leader>sn", vim.diagnostic.goto_next) -- "show next"
-        vim.keymap.set("n", "<leader>sp", vim.diagnostic.goto_prev) -- "show prev"
+        vim.keymap.set("n", "<leader>sn", vim.diagnostic.goto_next)
+        vim.keymap.set("n", "<leader>sp", vim.diagnostic.goto_prev)
 
+        -- Diagnostic config
         vim.diagnostic.config({
             signs = true,
-            virtual_text = false,
+            virtual_text = true, -- Fixed: was false
             underline = true,
             update_in_insert = false,
         })

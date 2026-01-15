@@ -14,6 +14,14 @@ return {
                     },
                 },
             }
+
+            vim.keymap.set("n", "<leader>rh", function()
+                vim.cmd.RustLsp({ 'hover', 'actions' })
+            end, { desc = "Rust hover actions" })
+
+            vim.keymap.set("n", "<leader>rd", function()
+                vim.cmd.RustLsp('openDocs')
+            end, { desc = "Open Rust docs" })
         end,
     },
     {

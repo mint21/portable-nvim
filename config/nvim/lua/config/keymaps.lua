@@ -7,3 +7,7 @@ vim.keymap.set("n", "<leader>h", "<C-w>h")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
 vim.keymap.set("n", "<leader>j", "<C-w>j")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
+
+-- Buffer navigation
+vim.keymap.set("n", "<leader>n", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>p", ":bprevious<CR>", { desc = "Previous buffer" })

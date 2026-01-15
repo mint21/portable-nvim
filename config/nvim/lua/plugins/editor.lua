@@ -1,5 +1,8 @@
 return {
     {
+        "numToStr/Comment.nvim", opts = {}
+    },
+    {
         "ellisonleao/gruvbox.nvim",
         priority = 1000,
         config = function()
@@ -44,6 +47,14 @@ return {
                     vim.keymap.set("n", "q", "<cmd>Trouble diagnostics toggle<cr>", { buffer = true })
                 end,
             })
+        end,
+    },
+    {
+        "ANGkeith/telescope-terraform-doc.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim" },
+        config = function()
+            require("telescope").load_extension("terraform_doc")
+            vim.keymap.set("n", "<leader>td", "<cmd>Telescope terraform_doc<cr>", { desc = "Terraform docs" })
         end,
     },
 }

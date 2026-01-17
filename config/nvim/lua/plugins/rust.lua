@@ -6,11 +6,17 @@ return {
         config = function()
             vim.g.rustaceanvim = {
                 server = {
+                    cmd = { "rustup", "run", "stable", "rust-analyzer" },
                     settings = {
                         ["rust-analyzer"] = {
                             cargo = { allFeatures = true },
                             check = { command = "clippy" },
                         },
+                    },
+                },
+                tools = {
+                    hover_actions = {
+                        border = "rounded", -- "rounded", "single", "double", "solid"
                     },
                 },
             }

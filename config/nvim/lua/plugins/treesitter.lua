@@ -8,7 +8,7 @@ return {
         end
 
         configs.setup({
-            ensure_installed = { "terraform", "hcl", "rust", "lua", "vim", "vimdoc" },
+            ensure_installed = { "terraform", "hcl", "rust", "lua", "vim", "vimdoc", "swift" },
             highlight = {
                 enable = true,
             },

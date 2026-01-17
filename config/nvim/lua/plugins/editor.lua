@@ -3,14 +3,6 @@ return {
         "numToStr/Comment.nvim", opts = {}
     },
     {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        config = function()
-            require("gruvbox").setup({ contrast = "hard" })
-            vim.cmd("colorscheme gruvbox")
-        end,
-    },
-    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         lazy = false, -- Load immediately

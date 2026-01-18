@@ -25,9 +25,7 @@ return {
         dap.listeners.before.event_exited["dapui_config"] = dapui.close
 
         -- Load platform-specific adapters
-        local is_windows = vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1
-
-        if is_windows then
+        if vim.loop.os_uname().sysname == "Windows_NT" then
             require("plugins.dap.codelldb").setup(dap)
         else
             require("plugins.dap.probe-rs").setup(dap)

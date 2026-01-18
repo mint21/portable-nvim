@@ -29,7 +29,6 @@ return {
             require("plugins.dap.codelldb").setup(dap)
         else
             require("plugins.dap.probe-rs").setup(dap)
-            require("plugins.dap.openocd").setup(dap)
             require("plugins.dap.lldb").setup(dap)
         end
     end,

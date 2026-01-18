@@ -26,6 +26,16 @@ return {
             local os = vim.loop.os_uname().sysname
 
             if os == "Darwin" or os == "Linux" then
+                -- probe-rs adapter
+                dap.adapters.probe_rs = {
+                    type = 'server',
+                    port = '${port}',
+                    executable = {
+                        command = 'probe-rs',
+                        args = { 'dap-server', '--port', '${port}' },
+                    }
+                }
+
                 -- Rust debugger (lldb)
                 dap.adapters.lldb = {
                     type = "executable",
@@ -35,7 +45,22 @@ return {
 
                 dap.configurations.rust = {
                     {
-                        name = "Launch",
+                        name = "ESP32-S3 Debug",
+                        type = "probe_rs",
+                        request = "launch",
+                        chip = "esp32s3",
+                        coreConfigs = {
+                            {
+                                coreIndex = 0,
+                                programBinary = function()
+                                    return vim.fn.input("Path to ELF: ",
+                                        vim.fn.getcwd() .. "/target/xtensa-esp32s3-none-elf/debug/", "file")
+                                end,
+                            }
+                        },
+                    },
+                    {
+                        name = "Launch (LLDB)",
                         type = "lldb",
                         request = "launch",
                         program = function()
